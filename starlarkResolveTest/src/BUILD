@@ -6,3 +6,8 @@ kt_test(
     srcs = ["SimpleKotlinTest.kt"],
     classname = "SimpleKotlinTest",
 )
+
+java_library(
+    name = "hello",
+    srcs = ["nested_src/Hello.java"],
+)
