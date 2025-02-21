@@ -1,4 +1,7 @@
-class UsesDependency3 {
-    org.junit.Assert assertClass;
-}
+import org.junit.Assert;
 
+class UsesDependency3 {
+     void foo() {
+          Assert.assertEquals(4, 2 + 2);
+     }
+}
