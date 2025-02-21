@@ -14,7 +14,7 @@ java_library(
 java_library(
     name = "uses_dependency_1",
     srcs = ["UsesDependency1.java"],
-    deps = ["//:dependency"],
+    deps = ["//:dependency",],
 )
 
 java_library(
