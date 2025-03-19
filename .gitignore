@@ -1,5 +1,4 @@
-/simpleKotlinTest/.bazelbsp/
-/simpleKotlinTest/bazel-bin/
-/simpleKotlinTest/bazel-out/
-/simpleKotlinTest/bazel-simpleKotlinTest/
-/simpleKotlinTest/bazel-testlogs/
+.bazelbsp/
+bazel-*
+.idea
+.DS_Store
