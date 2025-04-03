@@ -1,4 +1,5 @@
 load(":junit_test.bzl", "kt_test")
+load("@rules_java//java:java_library.bzl", "java_library")
 
 kt_test(
     name = "SimpleKotlinTest",
