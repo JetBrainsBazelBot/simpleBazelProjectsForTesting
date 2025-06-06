@@ -14,5 +14,8 @@ py_binary(
         requirement("numpy"),
         # python dependecny via http_archieve
         "@requests//:requests",
+        # generated source
+        "//python/generated:generated_directory_lib",
+        "//python/generated:generated_files_lib",
     ],
 )
