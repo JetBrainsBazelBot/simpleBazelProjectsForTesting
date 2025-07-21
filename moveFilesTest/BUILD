@@ -16,10 +16,4 @@ kt_jvm_library(
 java_library(
     name = "class3",
     srcs = ["Class3.java"],
-    deps = [":class4"],
-)
-
-kt_jvm_library(
-    name = "class4",
-    srcs = ["Class4.kt"],
 )
