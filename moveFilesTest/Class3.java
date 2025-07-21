@@ -1,9 +1,4 @@
-package class3;
-
-import class4.Class4;
+package src;
 
 public class Class3 {
-    public void foo() {
-        Class4 class4 = null;
-    }
 }
