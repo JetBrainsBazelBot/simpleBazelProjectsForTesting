@@ -1,0 +1,14 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+java_proto_library(
+    name = "lib_b_java",
+    visibility = ["//visibility:public"],
+    deps = [":lib_b"],
+)
+
+proto_library(
+    name = "lib_b",
+    srcs = ["lib_b.proto"],
+    visibility = ["//visibility:public"],
+    deps = ["//pure/libA:lib_a"],
+)
