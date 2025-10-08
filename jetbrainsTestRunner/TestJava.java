@@ -13,29 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * Each test sleeps for a bit so you can observe the test tree updating in IntelliJ while running under Bazel.
  */
 public class TestJava {
-
-  private static void pause(long millis) {
-    try {
-      System.out.println("[playground] Sleeping " + millis + " ms on " + Thread.currentThread().getName());
-      Thread.sleep(millis);
-    } catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new RuntimeException(e);
-    }
-  }
-
-  @Test
-  @DisplayName("fast pass 1")
-  void fastPass1() {
-    pause(300);
-    assertTrue(true);
-  }
-
-  @Test
-  @DisplayName("slow pass 2")
-  void slowPass2() {
-    pause(1200);
-    assertEquals(2, 1 + 1);
+  @ParameterizedTest
+  @ValueSource(classes = {String.class, Comparable.class}) // six numbers
+  void testWithClasses(Class<Comparable> myClass) {
+    assertTrue(myClass.getSimpleName().equals("String"));
   }
 
   @Test
@@ -43,42 +24,6 @@ public class TestJava {
   void mediumFail3() {
     pause(800);
     assertEquals("expected", "actual", "Intentional failure to showcase reporting");
-  }
-
-  @Test
-  @DisplayName("slow pass 4")
-  void slowPass4() {
-    pause(1500);
-    assertNotNull("ok");
-  }
-
-  @Test
-  @DisplayName("fast fail 5")
-  void fastFail5() {
-    pause(200);
-    fail("Deliberate failure (#5)");
-  }
-
-  @Test
-  @DisplayName("pass with stdout 6")
-  void passWithStdout6() {
-    System.out.println("[playground] Hello from test 6");
-    pause(500);
-    assertTrue(3 > 2);
-  }
-
-  @Disabled("demonstrate ignored test")
-  @Test
-  @DisplayName("ignored 7")
-  void ignored7() {
-    pause(400);
-  }
-
-  @RepeatedTest(3)
-  @DisplayName("repeated test 8 (x3)")
-  void repeated8() {
-    pause(300);
-    assertTrue(true);
   }
 
   @Nested
@@ -97,31 +42,15 @@ public class TestJava {
       pause(700);
       assertTrue(false, "Deliberate nested failure (#10)");
     }
+  }
 
-    @Test
-    @DisplayName("nested pass 11")
-    void nestedPass11() {
-      pause(400);
-      assertEquals("ok", "ok");
+  private static void pause(long millis) {
+    try {
+      System.out.println("[playground] Sleeping " + millis + " ms on " + Thread.currentThread().getName());
+      Thread.sleep(millis);
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new RuntimeException(e);
     }
-  }
-
-  @Test
-  @DisplayName("pass 12")
-  void pass12() {
-    pause(500);
-    assertTrue(true);
-  }
-
-  @ParameterizedTest
-  @ValueSource(ints = {1, 3, 5, -3, 15, Integer.MAX_VALUE}) // six numbers
-  void isOdd_ShouldReturnTrueForOddNumbers(int number) {
-    assertEquals(1, number % 2);
-  }
-
-  @ParameterizedTest
-  @ValueSource(classes = {String.class}) // six numbers
-  void testWithClasses(Class<Comparable> number) {
-    assertTrue(true);
   }
 }
