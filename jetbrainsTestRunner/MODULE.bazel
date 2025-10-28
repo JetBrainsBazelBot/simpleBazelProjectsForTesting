@@ -1,0 +1,24 @@
+bazel_dep(name = "rules_kotlin", version = "2.0.0")
+bazel_dep(name = "rules_license", version = "1.0.0")
+bazel_dep(name = "rules_java", version = "8.6.2")
+bazel_dep(name = "rules_jvm_external", version = "6.6")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "junit:junit:4.13.2",
+        "org.junit.jupiter:junit-jupiter:5.11.3",
+        "org.junit.platform:junit-platform-launcher:1.13.4",
+        "org.junit.platform:junit-platform-engine:1.13.4",
+    ],
+    fail_if_repin_required = True,
+    generate_compat_repositories = True,
+    lock_file = "//:maven_install.json",
+    repositories = [
+        "https://cache-redirector.jetbrains.com/maven-central",
+        "https://cache-redirector.jetbrains.com/intellij-dependencies",
+        "https://www.jetbrains.com/intellij-repository/releases",
+        "https://www.jetbrains.com/intellij-repository/snapshots",
+    ],
+)
+use_repo(maven, "maven")
