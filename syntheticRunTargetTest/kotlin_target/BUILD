@@ -6,4 +6,5 @@ kt_jvm_library(
         "main1.kt",
         "main2.kt",
     ],
+    visibility = ["//visibility:public"],
 )

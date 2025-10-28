@@ -6,4 +6,5 @@ java_library(
         "MyMain1.java",
         "MyMain2.java",
     ],
+    visibility = ["//visibility:public"],
 )
