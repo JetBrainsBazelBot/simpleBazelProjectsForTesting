@@ -1,1 +1,2 @@
 common --enable_bzlmod
+startup:windows --output_base=C:/b
