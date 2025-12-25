@@ -1,3 +1,4 @@
 common --enable_bzlmod
+startup --server_javabase=$env:JAVA_HOME
 build --javabase=@rules_java//toolchains:remotejdk_21
 build --host_javabase=@rules_java//toolchains:remotejdk_21
