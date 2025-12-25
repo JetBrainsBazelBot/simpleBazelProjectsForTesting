@@ -1,3 +1,3 @@
 common --enable_bzlmod
 common --enable_platform_specific_config
-startup:windows --output_base=C:/b
+startup --output_base=C:/b
