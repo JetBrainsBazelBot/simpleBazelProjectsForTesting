@@ -1,11 +1,16 @@
 derive_targets_from_directories: false
+index_all_files_in_directories: true
+
 directories:
   .
   -frontend
   -webapp
+
 targets:
   //app:app
   //common:common
   //server:server
   //frontend:frontend
   //webapp:webapp
+
+import_depth: 0
