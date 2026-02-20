@@ -1,5 +1,5 @@
 java_library(
     name = "common",
-    srcs = ["Common.java"],
+    srcs = glob(["src/main/java/**/*.java"]),
     visibility = ["//visibility:public"],
 )
