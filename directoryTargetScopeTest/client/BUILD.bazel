@@ -1,0 +1,5 @@
+java_library(
+    name = "client",
+    srcs = ["Client.java"],
+    deps = ["//common"],
+)

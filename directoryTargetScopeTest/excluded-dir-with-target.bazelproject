@@ -1,0 +1,11 @@
+derive_targets_from_directories: false
+directories:
+  .
+  -frontend
+  -webapp
+targets:
+  //app:app
+  //common:common
+  //server:server
+  //frontend:frontend
+  //webapp:webapp

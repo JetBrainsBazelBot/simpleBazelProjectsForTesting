@@ -1,0 +1,5 @@
+java_library(
+    name = "testing",
+    srcs = ["Testing.java"],
+    deps = ["//common"],
+)
