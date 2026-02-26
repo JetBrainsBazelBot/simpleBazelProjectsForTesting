@@ -10,7 +10,5 @@ targets:
   //app:app
   //common:common
   //server:server
-  //frontend:frontend
-  //webapp:webapp
 
 import_depth: 0
