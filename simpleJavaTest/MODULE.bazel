@@ -1,7 +1,10 @@
 
 bazel_dep(name = "rules_java", version = "8.9.0")
 bazel_dep(name = "rules_jvm_external", version = "6.7")
-bazel_dep(name = "contrib_rules_jvm", version = "0.28.0")
+bazel_dep(name = "contrib_rules_jvm", version = "0.32.0")
+
+# Work around https://github.com/bazelbuild/rules_apple/issues/2660
+bazel_dep(name = "rules_apple", version = "3.19.1")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
