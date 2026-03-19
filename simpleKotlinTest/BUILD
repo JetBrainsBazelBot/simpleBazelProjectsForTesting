@@ -37,3 +37,15 @@ broken(
     name = "ignore-me",
     tags = ["broken"],
 )
+
+kt_jvm_library(
+    name = "requires-no-ide",
+    srcs = ["Y.kt"],
+    deps = [":not-ignored"],
+)
+
+kt_jvm_library(
+    name = "not-ignored",
+    srcs = ["Z.kt"],
+    tags = ["no-ide"],
+)
