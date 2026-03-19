@@ -1,3 +1,6 @@
+load("@rules_java//java:java_binary.bzl", "java_binary")
+load("@rules_java//java:java_test.bzl", "java_test")
+
 def _custom_java_lib_impl(ctx):
     compilation = java_common.compile(
         ctx,
@@ -27,3 +30,9 @@ custom_java_lib = rule(
     fragments = ["java"],
     provides = [JavaInfo],
 )
+
+def custom_binary(name, **kwargs):
+    java_binary(name = name, **kwargs)
+
+def custom_test(name, **kwargs):
+    java_test(name = name, **kwargs)
