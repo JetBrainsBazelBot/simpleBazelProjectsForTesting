@@ -1,0 +1,6 @@
+derive_targets_from_directories: true
+directories: .
+
+python_code_generator_rule_names:
+  py_proto_library
+  pycross_wheel_library
