@@ -10,6 +10,7 @@ public class SimpleTest {
 
     @Test
     void secondTest() {
-        assertEquals(2, 1 + 1);
+        java.lang.Integer expected = 2;  // JVM classes should resolve correctly
+        assertEquals(expected, 1 + 1);
     }
 }
