@@ -20,8 +20,8 @@ java_library(
 
 java_test(
     name = "test_with_source",
-    srcs = ["JavaTest.java"],
-    test_class = "tests.MathJ4Test",
+    srcs = ["JavaTest.java", "MixedSource.java"],
+    test_class = "case2.JavaTest",
     deps = ["@maven//:junit_junit", ":normal_library2"],
 )
 
@@ -35,7 +35,7 @@ java_test(
 
 java_binary(
   name = "JavaBinary",
-  srcs = ["JavaBinary.java"],
+  srcs = ["JavaBinary.java", "MixedSource.java"],
   deps = [":normal_library1"],
   main_class = "case2.JavaBinary"
 )

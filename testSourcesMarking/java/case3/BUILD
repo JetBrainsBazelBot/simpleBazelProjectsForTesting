@@ -6,3 +6,9 @@ java_library(
     deps = ["@maven//:junit_junit"],
     visibility = ["//java:__pkg__"],
 )
+
+java_library(
+    name = "testonly",
+    srcs = ["TestOnlyLibrary.java"],
+    testonly = True,
+)
