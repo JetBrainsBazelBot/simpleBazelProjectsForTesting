@@ -1,0 +1,13 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@rules_java//java:java_library.bzl", "java_library")
+
+java_library(
+    name = "appj",
+    srcs = ["Main.java"],
+    deps = [
+        "//proto/requests:requests_java_proto",
+#         "//proto/common:common_java_proto",
+        "@maven//:com_google_protobuf_protobuf_java",
+    ],
+)
