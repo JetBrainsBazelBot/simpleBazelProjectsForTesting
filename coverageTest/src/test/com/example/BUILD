@@ -8,6 +8,7 @@ java_test(
     test_class = "com.example.CalculatorTest",
     deps = [
         "//src/main/com/example:calculator",
+        "//src/main/org/unexpected",
         "@maven//:junit_junit",
     ],
 )
