@@ -7,6 +7,7 @@ java_test(
     deps = [
         "@maven//:junit_junit",
     ],
+    visibility = ["//visibility:public"],
 )
 
 java_test(
@@ -16,4 +17,5 @@ java_test(
     deps = [
         "@maven//:junit_junit",
     ],
+    visibility = ["//visibility:public"],
 )
