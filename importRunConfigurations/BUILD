@@ -14,6 +14,7 @@ java_test(
     srcs = [
         "src/com/example/CalculatorTest.java",
     ],
+    shard_count = 2,  # Test that bazel run --script_path disables sharding correctly
     test_class = "com.example.CalculatorTest",
     deps = [
         ":calculator",
