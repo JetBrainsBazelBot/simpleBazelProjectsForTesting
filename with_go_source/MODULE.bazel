@@ -8,6 +8,7 @@ bazel_dep(
     version = "0.43.0",
     repo_name = "bazel_gazelle",
 )
+bazel_dep(name = "rules_java", version = "8.9.0")
 
 go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_mod = "//:go.mod")
